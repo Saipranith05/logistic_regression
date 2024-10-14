@@ -11,7 +11,7 @@ def connect_to_db():
     return mysql.connector.connect(
         host="localhost",
         user="root",  # Change this
-        password="saipranith",  # Change this
+        password="Saipranith@2003",  # Change this
         database="heart_data")
     
 #streamlit app
@@ -35,6 +35,7 @@ if st.button('Predict'):
     st.write(f"Prediction: {'Heart Disease' if prediction == 1 else 'No Heart Disease'}")
     
      # Store user input and prediction in the database
+     
     db = connect_to_db()
     cursor = db.cursor()
     
@@ -47,5 +48,5 @@ if st.button('Predict'):
     
     st.write("Data saved to the database.")
     
-    db = connect_to_db()
-    cursor = db.cursor()
+    cursor.close()
+    db.close()
