@@ -20,7 +20,7 @@ st.title("Heart Disease Prediction")
 age = st.number_input('Age', min_value=1, max_value=120)
 sex = st.selectbox('Sex (0: Female, 1: Male)', [0, 1])
 bp = st.number_input('Blood Pressure (bp)', min_value=80, max_value=200)
-cholesterol = st.number_input('Cholesterol (mg/dL)', min_value=100, max_value=600)
+cholesterol = st.number_input('Cholesterol (mg/dL)', min_value=60, max_value=600)
 
 if st.button('Predict'):
     # Prepare data for prediction
@@ -40,6 +40,7 @@ if st.button('Predict'):
     """
     cursor.execute(query, (age, sex, bp, cholesterol, int(prediction)))
     db.commit()
+
     
     st.write("Data saved to the database.")
     
