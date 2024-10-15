@@ -19,7 +19,7 @@ st.title("Heart Disease Prediction")
 # User input fields
 age = st.number_input('Age', min_value=1, max_value=120)
 sex = st.selectbox('Sex (0: Female, 1: Male)', [0, 1])
-bp = st.number_input('Blood Pressure (bp)', min_value=80, max_value=200)
+bp = st.number_input('Blood Pressure (bp)', min_value=60, max_value=200)
 cholesterol = st.number_input('Cholesterol (mg/dL)', min_value=60, max_value=600)
 
 if st.button('Predict'):
